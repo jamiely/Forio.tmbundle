@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Forio Settings</string>
+	<key>settings</key>
+	<dict>
+		<key>completions</key>
+		<array>
+			<string>FOREACH</string>
+			<string>ARRAYAVG</string>
+			<string>ARRAYSTDDEV</string>
+			<string>ARRAYSUM</string>
+			<string>SAFEDIV0</string>
+			<string>MAX</string>
+			<string>MIN</string>
+			<string>IF</string>
+			<string>SMOOTH</string>
+			<string>ARRAYGRAPH</string>
+			<string>LOOKUP</string>
+			<string>INITIAL</string>
+			<string>ROUND</string>
+			<string>PREVIOUS</string>
+			<string>STEP</string>
+			<string>true</string>
+			<string>false</string>
+			<string>TRUE</string>
+			<string>FALSE</string>
+			<string>NAN</string>
+			<string>NumberFormat</string>
+			<string>SaveResult</string>
+			<string>StartTime</string>
+			<string>EndTime</string>
+			<string>TimeStep</string>
+			<string>ExecuteDecisionImmediately</string>
+			<string>TimeFormat</string>
+			<string>InitialSteps</string>
+			<string>MultiplayerRolesRange</string>
+		</array>
+		<key>showInSymbolList</key>
+		<integer>1</integer>
+		<key>spellChecking</key>
+		<integer>1</integer>
+		<key>symbolTransformation</key>
+		<string>
+		s/ /!/g;
+	</string>
+	</dict>
+	<key>uuid</key>
+	<string>87DBB244-C7BA-4BD5-A9A8-4AE61435E735</string>
+</dict>
+</plist>

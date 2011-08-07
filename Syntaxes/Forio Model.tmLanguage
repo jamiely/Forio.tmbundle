@@ -15,29 +15,6 @@
 	<key>patterns</key>
 	<array>
 		<dict>
-			<key>match</key>
-			<string>\b(if|while|for|return|FOREACH|ARRAYAVG,ARRAYSTDDEV)\b</string>
-			<key>name</key>
-			<string>keyword.control.forio</string>
-		</dict>
-		<dict>
-			<key>begin</key>
-			<string>"</string>
-			<key>end</key>
-			<string>"</string>
-			<key>name</key>
-			<string>string.quoted.double.untitled</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>\\.</string>
-					<key>name</key>
-					<string>constant.character.escape.forio</string>
-				</dict>
-			</array>
-		</dict>
-		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -47,63 +24,212 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^(##).*$\n?</string>
+			<string>^\s*(##).*$\n?</string>
 			<key>name</key>
 			<string>comment.line.forio</string>
 		</dict>
 		<dict>
+			<key>begin</key>
+			<string>^(M) ([A-Za-z]+)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.definition</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>^(M) .+$\n?</string>
-			<key>name</key>
-			<string>constant.model.forio</string>
-		</dict>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.definition</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>^(V) .+$\n?</string>
-			<key>name</key>
-			<string>variable.variable.forio</string>
-		</dict>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.definition</string>
+					<string>storage.forio</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>variable.variable.forio</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>support.property.forio</string>
+					<string>support.model.settings.forio</string>
 				</dict>
 			</dict>
-			<key>match</key>
-			<string>^(P) (.+)\.(.+)$\n?</string>
+			<key>end</key>
+			<string>$\n?</string>
 			<key>name</key>
-			<string>entity.property.forio</string>
+			<string>expression.model.forio</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#operator</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#stdfunction</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#variable</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#bools</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^(D|V)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.forio</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.forio</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>$\n?</string>
+			<key>name</key>
+			<string>expression.variable.forio</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#operator</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#stdfunction</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#variable</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#bools</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#grouping</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^(P)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.forio</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>$\n?</string>
+			<key>name</key>
+			<string>expression.property.forio</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#operator</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#stdfunction</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#variable</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#property</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#bools</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#grouping</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#stdfunction</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#operator</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#variable</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#grouping</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#bools</string>
 		</dict>
 	</array>
+	<key>repository</key>
+	<dict>
+		<key>bools</key>
+		<dict>
+			<key>match</key>
+			<string>true|false|FALSE|TRUE</string>
+			<key>name</key>
+			<string>support.bools.forio</string>
+		</dict>
+		<key>grouping</key>
+		<dict>
+			<key>match</key>
+			<string>\{|\}</string>
+			<key>name</key>
+			<string>string.grouping.forio</string>
+		</dict>
+		<key>operator</key>
+		<dict>
+			<key>match</key>
+			<string>=|&gt;|&lt;|\*|\+|\/|-|&amp;|\|\%|\.\.</string>
+			<key>name</key>
+			<string>keyword.operator.forio</string>
+		</dict>
+		<key>property</key>
+		<dict>
+			<key>begin</key>
+			<string>(\.)[A-Za-z]</string>
+			<key>end</key>
+			<string>\b</string>
+			<key>name</key>
+			<string>support.property.forio</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#operator</string>
+				</dict>
+			</array>
+		</dict>
+		<key>stdfunction</key>
+		<dict>
+			<key>match</key>
+			<string>\b(if|while|for|return|FOREACH|ARRAYAVG|ARRAYSTDDEV|ARRAYSUM|SAFEDIV0|MAX|MIN|IF|SMOOTH|ARRAYGRAPH|LOOKUP|INITIAL|ROUND|PREVIOUS|STEP|true|false|TRUE|FALSE|NAN)\b</string>
+			<key>name</key>
+			<string>support.function.forio</string>
+		</dict>
+		<key>variable</key>
+		<dict>
+			<key>match</key>
+			<string>[A-Za-z]\w*( \w+)*</string>
+			<key>name</key>
+			<string>variable.userdefined.forio</string>
+		</dict>
+	</dict>
 	<key>scopeName</key>
 	<string>source.forio</string>
 	<key>uuid</key>
