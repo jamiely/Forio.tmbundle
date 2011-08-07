@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Forio</string>
+	<key>ordering</key>
+	<array>
+		<string>D70594AA-BD0A-4BC8-9814-3E1A544BF4A6</string>
+	</array>
+	<key>uuid</key>
+	<string>12BB07CA-CF2E-4755-849C-3216E9DCE772</string>
+</dict>
+</plist>
