@@ -67,6 +67,10 @@
 					<key>include</key>
 					<string>#bools</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#number</string>
+				</dict>
 			</array>
 		</dict>
 		<dict>
@@ -111,6 +115,10 @@
 					<key>include</key>
 					<string>#grouping</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#number</string>
+				</dict>
 			</array>
 		</dict>
 		<dict>
@@ -154,6 +162,10 @@
 					<key>include</key>
 					<string>#grouping</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#number</string>
+				</dict>
 			</array>
 		</dict>
 		<dict>
@@ -176,6 +188,10 @@
 			<key>include</key>
 			<string>#bools</string>
 		</dict>
+		<dict>
+			<key>include</key>
+			<string>#number</string>
+		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
@@ -192,6 +208,18 @@
 			<string>\{|\}</string>
 			<key>name</key>
 			<string>string.grouping.forio</string>
+		</dict>
+		<key>number</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>[0-9]+\.(?!\.)|[0-9]?*\.?[0-9]+([eE][-+]?[0-9])?</string>
+					<key>name</key>
+					<string>constant.numeric.forio</string>
+				</dict>
+			</array>
 		</dict>
 		<key>operator</key>
 		<dict>
