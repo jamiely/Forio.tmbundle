@@ -4,6 +4,7 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
+		<string>eqn</string>
 		<string>forio</string>
 	</array>
 	<key>foldingStartMarker</key>
@@ -70,7 +71,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^(D|V)</string>
+			<string>^(D|V|R)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
