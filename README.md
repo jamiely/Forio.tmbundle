@@ -1,5 +1,5 @@
 ### Syntax highlighting for the Forio Modeling Language
-
+=====================================
 #### Instalation for Sublime
 From the comand line:
 
