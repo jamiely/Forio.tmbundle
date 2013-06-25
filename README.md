@@ -1,6 +1,6 @@
-## Syntax highlighting for the Forio Modeling Language
+### Syntax highlighting for the Forio Modeling Language
 
-### Instalation for Sublime
+#### Instalation for Sublime
 From the comand line:
 
     cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/
