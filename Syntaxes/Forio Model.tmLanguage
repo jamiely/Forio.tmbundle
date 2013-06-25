@@ -4,6 +4,7 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
+		<string>eqn</string>
 		<string>forio</string>
 	</array>
 	<key>foldingStartMarker</key>
@@ -24,7 +25,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\s*(##).*$\n?</string>
+			<string>^\s*(#).*$\n?</string>
 			<key>name</key>
 			<string>comment.line.forio</string>
 		</dict>
@@ -66,11 +67,15 @@
 					<key>include</key>
 					<string>#bools</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#number</string>
+				</dict>
 			</array>
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^(D|V)</string>
+			<string>^(D|V|R)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -109,6 +114,10 @@
 				<dict>
 					<key>include</key>
 					<string>#grouping</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#number</string>
 				</dict>
 			</array>
 		</dict>
@@ -153,6 +162,10 @@
 					<key>include</key>
 					<string>#grouping</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#number</string>
+				</dict>
 			</array>
 		</dict>
 		<dict>
@@ -175,6 +188,10 @@
 			<key>include</key>
 			<string>#bools</string>
 		</dict>
+		<dict>
+			<key>include</key>
+			<string>#number</string>
+		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
@@ -191,6 +208,18 @@
 			<string>\{|\}</string>
 			<key>name</key>
 			<string>string.grouping.forio</string>
+		</dict>
+		<key>number</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>[0-9]+\.(?!\.)|[0-9]?*\.?[0-9]+([eE][-+]?[0-9])?</string>
+					<key>name</key>
+					<string>constant.numeric.forio</string>
+				</dict>
+			</array>
 		</dict>
 		<key>operator</key>
 		<dict>
@@ -218,7 +247,7 @@
 		<key>stdfunction</key>
 		<dict>
 			<key>match</key>
-			<string>\b(if|while|for|return|FOREACH|ARRAYAVG|ARRAYSTDDEV|ARRAYSUM|SAFEDIV0|MAX|MIN|IF|SMOOTH|ARRAYGRAPH|LOOKUP|INITIAL|ROUND|PREVIOUS|STEP|true|false|TRUE|FALSE|NAN)\b</string>
+			<string>\b(TIMECYCLE|ABS|CEILING|COS|SAFEDIV0|SAFEDIVX|EXP|FLOOR|INT|LN|LOG10|MOD|NAN|PI|ROUND|ROUNDDOWN|ROUNDUP|SIGN|SIN|SQRT|TAN|TRUNC|AND|FALSE|false|IF|NOT|OR|TRUE|true|SIMTIME|SIMSTEP|ACCUM|STOCK|INITIAL|PREVIOUS|REMEMBER|LOOKUP|GRAPH|GRAPHSTEP|NPV|PV|FV|PMT|NPER|ACCUMPERIOD|MAX|MIN|RAND|RANDBETWEEN|PCT|SUM|AVG|DELAY|NORMAL|POISSON|STDDEV|FRAC|ARRAYAVG|ARRAYCOUNT|ARRAYGRAPH|ARRAYGRAPHSTEP|ARRAYMAX|ARRAYMIN|ARRAYPRODUCT|ARRAYSORT|ARRAYSTDDEV|ARRAYSUM|INDEXOF|MATRIXINVERT|MATRIXPRODUCT|MATRIXTRANSPOSE|ARRAYGRAPHXY|ARRAYIRR|ARRAYNPV|ARRAYMIRR|ARRAYGRAPHYX|ARRAYAREAXY|ARRAYSLOPEXY|RANGECOUNT|FIRST|LAST|FOREACH|SD_PULSE|SD_V_PULSE|SD_RAMP|SD_SAMPLE|SD_SMOOTH|SD_STEP|SD_V_SMOOTH|SD_V_SMOOTH3|PULSE|V_PULSE|RAMP|SAMPLE|SMOOTH|STEP|V_SMOOTH|V_SMOOTH3|UNKNOWN_FUNCTION|EndTime|InitialSteps|StartTime|StepsPerInterval|StepsPerSave|TimeStep|TimeFormat|DecisionMax|DecisionMin|ExecuteDecisionImmediately|GraphMax|GraphMin|Label|NumberFormat|ResetDecision|SaveResult|TimeSeries|UseDecisionMax|UseDecisionMin|UseGraphMax|UseGraphMin)\b</string>
 			<key>name</key>
 			<string>support.function.forio</string>
 		</dict>
