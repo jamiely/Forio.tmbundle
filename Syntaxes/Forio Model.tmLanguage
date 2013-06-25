@@ -31,7 +31,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^(M) ([A-Za-z]+)</string>
+			<string>^\s*?(M) ([A-Za-z]+)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -75,7 +75,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^(D|V|R)</string>
+			<string>^\s*?(D|V|R)\b</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -123,7 +123,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^(P)</string>
+			<string>^\s*?(P)\b</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
