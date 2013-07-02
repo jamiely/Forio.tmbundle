@@ -9,5 +9,5 @@ From the comand line:
 Drag and drop:
 - Click "Download as zip"
 - Inside Sublime navigate to `Sublime Text 2->Preferences->Browse Packages`
-- Unpack the zipped archive into our "Packages" directory
+- Unpack the zipped archive into your "Packages" directory
 
